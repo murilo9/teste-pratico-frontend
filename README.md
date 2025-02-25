@@ -1,12 +1,13 @@
 # Teste Técnico Front-end BeTalent
 
 Projeto desenvolvido utilizando React/Vite com Typescript.
+
 Autor: Murilo Henrique Matias
 
 ### Bibliotecas utilizadas
 
-- Styled Components: para estilização dos componentes.
-- Date-fns: para formatação das datas.
+- **Styled Components**: para estilização dos componentes.
+- **Date-fns**: para formatação das datas.
 
 ### Instruções para execução
 
