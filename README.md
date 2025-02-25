@@ -14,4 +14,4 @@ Autor: Murilo Henrique Matias
 1. Instale as dependências do projeto, caso não tenha feito ainda (`npm install`).
 2. Inicie o servidor json-server (`npm run dev:api`).
 3. Inicie a aplicação front-end (`npm run dev`).
-4. Acesse a aplicação em (http://localhost:5173)[http://localhost:5173].
+4. Acesse a aplicação em [http://localhost:5173](http://localhost:5173).
