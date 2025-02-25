@@ -6,6 +6,7 @@ import { Theme } from "./theme";
 import EmployeeTable from "./components/EmployeeTable";
 import { useEffect, useState } from "react";
 import { Employee } from "./types/Employee";
+import { filterEmployeesBySearchQuery } from "./helpers/filterEmployeesBySearchQuery";
 
 const StyledMainContent = styled.div`
   display: flex;
@@ -34,6 +35,11 @@ const StyledHeadingContainer = styled.div`
 
 function App() {
   const [employees, setEmployees] = useState<Array<Employee> | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
+  const filteredEmployees =
+    employees !== null && searchQuery
+      ? filterEmployeesBySearchQuery(employees, searchQuery)
+      : employees;
 
   useEffect(() => {
     const init = async () => {
@@ -50,9 +56,11 @@ function App() {
       <StyledMainContent>
         <StyledHeadingContainer>
           <StyledTitle>Funcionários</StyledTitle>
-          <StyledSearchInput />
+          <StyledSearchInput value={searchQuery} onChange={setSearchQuery} />
         </StyledHeadingContainer>
-        {employees ? <EmployeeTable employees={employees} /> : null}
+        {employees && filteredEmployees ? (
+          <EmployeeTable employees={filteredEmployees} />
+        ) : null}
       </StyledMainContent>
     </>
   );
